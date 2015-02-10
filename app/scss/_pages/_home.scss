@@ -15,11 +15,14 @@
   overflow: hidden;
   ul {
     display: block;
-    height: 340px;
-    overflow: scroll;
-    padding: 0 15px 0 0;
-    -webkit-overflow-scrolling: touch;
   }
+}
+
+.chat-wrap-inner {
+  height: 340px;
+  overflow: scroll;
+  padding: 0 15px 0 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .timeline {
@@ -72,7 +75,7 @@
     border-radius: 100%;
     margin: -7px 0 0 0;
     z-index: 10;
-    left: -44px;
+    left: -43px;
     backface-visibility: hidden;
     opacity: 0;
   }
@@ -100,7 +103,7 @@
     }
     &:after {
       left: auto;
-      right: -44px;
+      right: -43px;
     }
   }
 }

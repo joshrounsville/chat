@@ -22,8 +22,14 @@ var port = process.env.PORT || 5000;
 
 
 var ChatSchema = new Schema({
-  comment: String,
-  updated: { type: Date, default: Date.now }
+  user: String,
+  comments: {
+    comment: { content: String }
+  },
+  updated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 var Chat = mongoose.model('Chat', ChatSchema);;
@@ -54,8 +60,8 @@ router.route('/api/chats')
   // create a chat (accessed at POST http://localhost:8080/api/chats)
   .post(function(req, res) {
 
-    var chat = new Chat();      // create a new instance of the chat model
-    chat.comment = req.body.comment;
+    var chat = new Chat();  // create a new instance of the chat model
+    chat.user = req.body.user;
     chat.updated = req.body.updated;
 
     // save the chat and check for errors
@@ -92,13 +98,29 @@ router.route('/api/chats/:chat_id')
     });
   })
 
+  // create a comment (accessed at POST http://localhost:8080/api/chats/:chat_id)
+  .post(function(req, res) {
+
+    var chat = new Chat();  // create a new instance of the chat model
+    chat.comment = req.body.comment;
+
+    // save the chat and check for errors
+    chat.save(function(err) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json({ message: 'comment created!' });
+      }
+    });
+  })
+
   .put(function(req, res) {
     // use our chat model to find the chat we want
     Chat.findById(req.params.chat_id, function(err, chat) {
       if (err) {
         res.send(err);
       } else {
-        chat.checkedIn = req.body.checkedIn;  // update the chat info
+        chat.comment = req.body.comment;  // update the chat info
       }
 
       // save the chat
