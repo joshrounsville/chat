@@ -27,7 +27,7 @@
 
 .chat-bubble {
   display: block;
-  width: 44%;
+  width: 45%;
   background: #fff;
   border: 1px solid $colorPurple;
   margin: 0 0 20px;
@@ -61,7 +61,7 @@
     border-radius: 100%;
     margin: -7px 0 0 0;
     z-index: 10;
-    left: -44px;
+    left: -46px;
     backface-visibility: hidden;
     opacity: 0;
   }
@@ -90,7 +90,7 @@
     }
     &:after {
       left: auto;
-      right: -44px;
+      right: -46px;
     }
   }
 }

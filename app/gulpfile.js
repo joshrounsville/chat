@@ -98,7 +98,7 @@ gulp.task('webserver', function() {
 
 gulp.task('run', [ 'css' ]);
 
-gulp.task('default', [ 'run', 'webserver', 'images' ], function() {
+gulp.task('default', [ 'run' ], function() {
 
   setTimeout(function() {
     cp.exec('open http://localhost:' + port);
