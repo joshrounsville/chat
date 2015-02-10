@@ -8,7 +8,18 @@
 .chat-wrap {
   @include clearfix();
   position: relative;
-  min-height: 400px;
+  height: 380px;
+  padding: 20px 5px 20px 20px;
+  background: #f5f5f5;
+  border: 1px solid #efefef;
+  overflow: hidden;
+  ul {
+    display: block;
+    height: 340px;
+    overflow: scroll;
+    padding: 0 15px 0 0;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .timeline {
@@ -16,12 +27,11 @@
   width: 2px;
   background: $colorPurple;
   position: absolute;
-  top: 0;
+  top: 40px;
   left: 50%;
-  bottom: 0;
+  bottom: 20px;
   margin-left: -1px;
-  height: 100%;
-  animation: fadeIn 0.14s 0.25s both;
+  animation: fadeIn 0.9s both;
 }
 
 
@@ -30,11 +40,12 @@
   width: 45%;
   background: #fff;
   border: 1px solid $colorPurple;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   position: relative;
   animation-duration: 0.35s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
+  clear: both;
   &:before,
   &:after {
     content: " ";
@@ -61,7 +72,7 @@
     border-radius: 100%;
     margin: -7px 0 0 0;
     z-index: 10;
-    left: -46px;
+    left: -44px;
     backface-visibility: hidden;
     opacity: 0;
   }
@@ -69,16 +80,15 @@
     animation-name: fadeIn;
     animation-duration: 0.35s;
     animation-fill-mode: both;
+    animation-delay: 0.3s;
   }
 
-  &:nth-of-type(odd) {
+  &:nth-last-of-type(odd) {
     float: right;
-    margin: 0 0 50px;
     animation-name: slideInToLeft;
   }
-  &:nth-of-type(even) {
+  &:nth-last-of-type(even) {
     float: left;
-    margin: 50px 0 0 0;
     animation-name: slideInToRight;
     &:before {
       left: auto;
@@ -90,7 +100,7 @@
     }
     &:after {
       left: auto;
-      right: -46px;
+      right: -44px;
     }
   }
 }

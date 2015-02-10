@@ -90,6 +90,11 @@ input::-moz-focus-inner {
   outline: 0;
   border: 1px solid #56639c;
   padding: 10px 15px;
+  transition: all 0.13s ease-in-out;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  }
 }
 
 

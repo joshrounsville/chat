@@ -65,8 +65,7 @@ App.Views.Chats = Backbone.View.extend({
 
   addOne: function(chat) {
     var chatView = new App.Views.Chat({ model: chat });
-    this.$el.append( chatView.render().el );
-    this.$el.scrollTop(100);
+    this.$el.prepend( chatView.render().el );
   }
 
 });
