@@ -1,0 +1,31 @@
+/* ==========================================================================
+  Button
+========================================================================== */
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 32px 9px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  outline: 0;
+  background: $colorBtn;
+  color: $colorText;
+  border: 1px solid $colorBtn;
+  &:hover,
+  &:focus {
+    background: #4d4d4d;
+    color: #fff;
+    border: 1px solid #4d4d4d;
+  }
+
+  &.btn--primary {
+    font-size: $fontLarge;
+    padding: 13px 42px 12px;
+  }
+  &.btn--secondary {
+    font-size: $fontSmall;
+    padding: 8px 28px;
+  }
+}

@@ -1,0 +1,42 @@
+/* ==========================================================================
+  Styles - used to import and order stylesheets
+========================================================================== */
+
+
+/**** import meta ****/
+@import "_meta/variables", "_meta/mixins";
+
+
+/**** import animations ****/
+@import "_animations/defined";
+
+
+/**** import base styles ****/
+@import "_base/fonts", "_base/reset", "_base/grid", "_base/typography";
+
+
+/**** import elements ****/
+@import "_elements/forms", "_elements/tables";
+@import "_elements/media", "_elements/lists", "_elements/links";
+
+
+/**** import components ****/
+@import "_components/buttons", "_components/icons", "_components/font-awesome", "_components/carousel";
+
+
+/**** import sections ****/
+@import "_sections/header", "_sections/footer", "_sections/main";
+
+
+/**** import pages ****/
+@import "_pages/home";
+
+
+/**** import classes ****/
+@import "_utilities/classes-spacing", "_utilities/classes";
+
+
+/**** import print styles ****/
+@media print {
+  @import "_utilities/print";
+}

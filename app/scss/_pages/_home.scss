@@ -1,0 +1,103 @@
+/* ==========================================================================
+  Home
+========================================================================== */
+
+
+
+
+.chat-wrap {
+  @include clearfix();
+  position: relative;
+  min-height: 400px;
+}
+
+.timeline {
+  display: block;
+  width: 2px;
+  background: $colorPurple;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  margin-left: -1px;
+  height: 100%;
+  animation: fadeIn 0.14s 0.25s both;
+}
+
+
+.chat-bubble {
+  display: block;
+  width: 44%;
+  background: #fff;
+  border: 1px solid $colorPurple;
+  margin: 0 0 20px;
+  position: relative;
+  animation-duration: 0.35s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  &:before,
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  &:before {
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background: #fff;
+    border: 1px solid $colorPurple;
+    border-top: none;
+    border-right: none;
+    margin: -10px 0 0 -10px;
+    z-index: -1;
+  }
+  &:after {
+    width: 14px;
+    height: 14px;
+    background: $colorPurple;
+    border-radius: 100%;
+    margin: -7px 0 0 0;
+    z-index: 10;
+    left: -44px;
+    backface-visibility: hidden;
+    opacity: 0;
+  }
+  &:after {
+    animation-name: fadeIn;
+    animation-duration: 0.35s;
+    animation-fill-mode: both;
+  }
+
+  &:nth-of-type(odd) {
+    float: right;
+    margin: 0 0 50px;
+    animation-name: slideInToLeft;
+  }
+  &:nth-of-type(even) {
+    float: left;
+    margin: 50px 0 0 0;
+    animation-name: slideInToRight;
+    &:before {
+      left: auto;
+      right: 0;
+      margin: -10px -10px 0 0;
+      border: 1px solid $colorPurple;
+      border-bottom: none;
+      border-left: none;
+    }
+    &:after {
+      left: auto;
+      right: -44px;
+    }
+  }
+}
+
+
+.chat-bubble-inner {
+  display: block;
+  padding: 10px;
+  background: #fff;
+}

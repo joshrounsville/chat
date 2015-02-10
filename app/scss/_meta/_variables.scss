@@ -1,0 +1,50 @@
+/* ==========================================================================
+  Variables
+========================================================================== */
+
+
+/*==========  DEFINE BREAKPOINTS  ==========*/
+
+$xSmall: 555px !default;
+$small: 740px !default;
+$medium: 950px !default;
+$large: 1170px !default;
+
+
+/*==========  SPACING  ==========*/
+
+$padding: 20px;
+$margin: 50px;
+
+
+/*==========  COLORS  ==========*/
+
+$colorGray: #737373 !default;
+$colorGrayDark: #404040 !default;
+$colorGrayLight: #bbb !default;
+$colorPurple: #56639c !default;
+
+$colorText: $colorGrayDark !default;
+$colorBtn: #333 !default;
+
+$colorLink: #333 !default;
+
+
+/*==========  FONTS  ==========*/
+
+$fontSmall: 13px !default;
+$fontBase: 16px !default;
+$fontLarge: 20px !default;
+
+$fontH1: 40px !default;
+$fontH2: 34px !default;
+$fontH3: 28px !default;
+$fontH4: 22px !default;
+$fontH5: 16px !default;
+$fontH6: 14px !default;
+
+$lineHeight: 1.5 !default;
+$lineHeightHeader: 1.2 !default;
+
+$fontRegular: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$fontHighlight: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

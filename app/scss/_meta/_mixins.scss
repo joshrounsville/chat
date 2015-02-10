@@ -1,0 +1,65 @@
+/* ==========================================================================
+  Mixins
+========================================================================== */
+
+
+@mixin fontRegular() {
+  font-family: $fontRegular;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin fontHighlight() {
+  font-family: $fontHighlight;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin breakpoint($point) {
+  @if $point == xSmall {
+    @media ( max-width: $xSmall )  { @content; }
+  }
+  @else if $point == small {
+    @media ( max-width: $small + 20 )  { @content; }
+  }
+  @else if $point == medium {
+    @media ( max-width: $medium + 20 ) { @content; }
+  }
+  @else if $point == large {
+    @media ( max-width: $large + 20 ) { @content; }
+  }
+}
+
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@mixin vAlign() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+@mixin placeholder($color) {
+  &:-moz-placeholder { color: $color; }
+  &::-moz-placeholder { color: $color; }
+  &:-ms-input-placeholder { color: $color; }
+  &::-webkit-input-placeholder { color: $color; }
+}
